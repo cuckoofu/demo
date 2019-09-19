@@ -1,0 +1,17 @@
+spring:
+  thymeleaf:
+    cache: false
+    enabled: true
+    check-template: true
+    check-template-location: true
+    content-type: text/html
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+  datasource:
+    url: jdbc:postgresql://192.168.179.221:5432/cuckoo?characterEncoding=utf-8&serverTimeZone=GMT%2B8
+    driverClassName: org.postgresql.Driver
+    username: lak_lpf
+    password: abc123_
+  jpa:
+    properties.hibernate.jdbc.lob.non_contextual_creation: true

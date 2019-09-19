@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <link href="main.css" rel="stylesheet" type="text/css" />    
+        <link rel="stylesheet" type="text/css" href="aui.css" />
+        <script type="text/javascript" src="api.js"></script>
+        <script type="text/javascript" src="jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+
+    <body>
+        <div id="header">
+        <h1>Custom Field</h1>
+        </div>
+        <div id="nav">
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined back-main">Resource List</div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+            <p><div class="aui-btn aui-btn-primary aui-btn-block aui-btn-outlined"></div></p>
+        </div>
+
+        <div id="main">
+            <div class="view-list aui-content aui-margin-b-15">
+                <ul class="aui-list aui-form-list">
+                    <li class="aui-list-header">Organization</li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label">
+                                    Organization1
+                            </div>
+                            <div class="aui-list-item-label">
+                                <div class="aui-btn aui-btn-info" onclick="edit(1)">Edit</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label">
+                                    Organization2
+                            </div>
+                            <div class="aui-list-item-label">
+                                <div class="aui-btn aui-btn-info" onclick="edit(2)">Edit</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label">
+                                    Organization3
+                            </div>
+                            <div class="aui-list-item-label">
+                                <div class="aui-btn aui-btn-info" onclick="edit(3)">Edit</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="detail-field">
+                <div class="aui-content aui-margin-b-15">
+                    <ul class="aui-list aui-form-list">
+                        <li class="aui-list-header">Edit custom field</li>
+                        <li class="aui-list-item">
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-label">
+                                    field1
+                                </div>
+                                <div class="aui-list-item-input">
+                                    <input type="text" placeholder="Value">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="aui-list-item">
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-label">
+                                    field2
+                                </div>
+                                <div class="aui-list-item-input">
+                                    <input type="text" placeholder="Value">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="aui-list-item">
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-label">
+                                    field3
+                                </div>
+                                <div class="aui-list-item-input">
+                                    <input type="text" placeholder="Value">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="aui-list-item">
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-label">
+                                    field4
+                                </div>
+                                <div class="aui-list-item-input">
+                                    <input type="text" placeholder="Value">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="aui-btn aui-btn-success aui-btn-block save-org-button">Save</div>
+                    <div class="aui-btn aui-btn-primary aui-btn-block add-field-button">Add Custom Field</div>
+                </div>
+            </div>
+            <div class="add-field">
+                <div class="aui-content aui-margin-b-15">
+                    <ul class="aui-list aui-form-list">
+                        <li class="aui-list-header">Add custom field</li>
+                        <li class="aui-list-item">
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-label">
+                                    Custom Field Name
+                                </div>
+                                <div class="aui-list-item-input">
+                                    <input type="text" placeholder="Value">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="aui-list-item">
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-label">
+                                    Custom Field Value
+                                </div>
+                                <div class="aui-list-item-input">
+                                    <input type="text" placeholder="Value">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="aui-btn aui-btn-success aui-btn-block save-field-button">Save</div>
+                    <div class="aui-btn aui-btn-primary aui-btn-block back-main">View Organization</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            Custom Field Demo
+        </div>
+
+    </body>
+</html>

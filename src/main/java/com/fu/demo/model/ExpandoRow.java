@@ -1,10 +1,23 @@
 package com.fu.demo.model;
 
-public class ExpandoRow {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
+@Entity
+@Table(name = "expandorow")
+public class ExpandoRow implements Serializable {
+
+    @Id
+    @Column
     private long rowid_;
+    @Column
     private long companyid;
+    @Column
     private long tableid;
+    @Column
     private long classpk;
 
     public long getRowid_() {

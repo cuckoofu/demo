@@ -1,10 +1,22 @@
 package com.fu.demo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "expandotable")
 public class ExpandoTable {
 
+    @Id
+    @Column
     private long tableid;
+    @Column
     private long companyid;
+    @Column
     private long classnameid;
+    @Column
     private String name;
 
     public long getTableid() {

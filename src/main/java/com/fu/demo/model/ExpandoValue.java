@@ -1,14 +1,30 @@
 package com.fu.demo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "expandovalue")
 public class ExpandoValue {
 
+    @Id
+    @Column
     private long valueid;
+    @Column
     private long companyid;
+    @Column
     private long tableid;
+    @Column
     private long columnid;
+    @Column
     private long rowid_;
+    @Column
     private long classnameid;
+    @Column
     private long classpk;
+    @Column
     private String data_;
 
     public long getValueid() {

@@ -1,10 +1,10 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <link href="main.css" rel="stylesheet" type="text/css" />    
-        <link rel="stylesheet" type="text/css" href="aui.css" />
-        <script type="text/javascript" src="api.js"></script>
-        <script type="text/javascript" src="jquery-3.4.1.js"></script>
-        <script type="text/javascript" src="index.js"></script>
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/aui.css" />
+        <script type="text/javascript" src="js/api.js"></script>
+        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
 
     <body>
@@ -31,39 +31,21 @@
             <div class="view-list aui-content aui-margin-b-15">
                 <ul class="aui-list aui-form-list">
                     <li class="aui-list-header">Organization</li>
-                    <li class="aui-list-item">
-                        <div class="aui-list-item-inner">
-                            <div class="aui-list-item-label">
-                                    Organization1
+                    <div th:each="org:${orgs}">
+                        <li class="aui-list-item">
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-label">
+                                    <span th:text="${org.name}"/>
+                                </div>
+                                <div class="aui-list-item-input">
+                                    <a th:href=@{|/field/${org.organizationid}|}>Edit</a>
+                                </div>
                             </div>
-                            <div class="aui-list-item-label">
-                                <div class="aui-btn aui-btn-info" onclick="edit(1)">Edit</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="aui-list-item">
-                        <div class="aui-list-item-inner">
-                            <div class="aui-list-item-label">
-                                    Organization2
-                            </div>
-                            <div class="aui-list-item-label">
-                                <div class="aui-btn aui-btn-info" onclick="edit(2)">Edit</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="aui-list-item">
-                        <div class="aui-list-item-inner">
-                            <div class="aui-list-item-label">
-                                    Organization3
-                            </div>
-                            <div class="aui-list-item-label">
-                                <div class="aui-btn aui-btn-info" onclick="edit(3)">Edit</div>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    </div>
                 </ul>
             </div>
-            <div class="detail-field">
+            <div class="detail-field" style="display: none">
                 <div class="aui-content aui-margin-b-15">
                     <ul class="aui-list aui-form-list">
                         <li class="aui-list-header">Edit custom field</li>
@@ -112,7 +94,7 @@
                     <div class="aui-btn aui-btn-primary aui-btn-block add-field-button">Add Custom Field</div>
                 </div>
             </div>
-            <div class="add-field">
+            <div class="add-field" style="display: none">
                 <div class="aui-content aui-margin-b-15">
                     <ul class="aui-list aui-form-list">
                         <li class="aui-list-header">Add custom field</li>
@@ -138,7 +120,7 @@
                         </li>
                     </ul>
                     <div class="aui-btn aui-btn-success aui-btn-block save-field-button">Save</div>
-                    <div class="aui-btn aui-btn-primary aui-btn-block back-main">View Organization</div>
+                    <div class="aui-btn aui-btn-primary aui-btn-block back-main">Add Custom Field</div>
                 </div>
             </div>
         </div>

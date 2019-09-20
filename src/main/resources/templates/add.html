@@ -1,10 +1,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <link href="css/main.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" type="text/css" href="css/aui.css" />
-        <script type="text/javascript" src="js/api.js"></script>
-        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <link href="http://localhost:8080/demo/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost:8080/demo/aui.css" />
+        <script type="text/javascript" src="http://localhost:8080/demo/api.js"></script>
+        <script type="text/javascript" src="http://localhost:8080/demo/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="http://localhost:8080/demo/index.js"></script>
     </head>
 
     <body>
@@ -28,7 +28,7 @@
         </div>
 
         <div id="main">
-            <div class="view-list aui-content aui-margin-b-15">
+            <div class="view-list aui-content aui-margin-b-15" style="display: none">
                 <ul class="aui-list aui-form-list">
                     <li class="aui-list-header">Organization</li>
                     <div th:each="org:${orgs}">
@@ -38,7 +38,7 @@
                                     <span th:text="${org.name}"/>
                                 </div>
                                 <div class="aui-list-item-input">
-                                    <a th:href=@{|/field/${org.organizationid}|}>Edit</a>
+                                    <div class="aui-btn aui-btn-info field-detail-button" onclick="edit(' + ${org.organizationid} + ')">Edit</div>
                                 </div>
                             </div>
                         </li>
@@ -94,7 +94,7 @@
                     <div class="aui-btn aui-btn-primary aui-btn-block add-field-button">Add Custom Field</div>
                 </div>
             </div>
-            <div class="add-field" style="display: none">
+            <div class="add-field">
                 <div class="aui-content aui-margin-b-15">
                     <ul class="aui-list aui-form-list">
                         <li class="aui-list-header">Add custom field</li>

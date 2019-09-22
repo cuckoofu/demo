@@ -39,4 +39,14 @@ public class OrganizationServiceImpl implements OrganizationService {
 
         return columns;
     }
+
+    @Override
+    public void saveCustomField(String fieldName, String fieldValue) {
+        ExpandoColumn expandoColumn = new ExpandoColumn();
+        expandoColumn.setName(fieldName);
+        expandoColumn.setDefaultdata(fieldValue);
+        expandoColumn.setType_(0);
+        expandoColumn.setTableid(4001);
+        columnRepository.save(expandoColumn);
+    }
 }

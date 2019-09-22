@@ -22,9 +22,10 @@ $(document).ready(function() {
 	});
 
 	$(".back-main").click(function(){
-        $(".view-list").show();
-        $(".detail-field").css("display","none");
-        $(".add-field").css("display","none");
+//        $(".view-list").show();
+//        $(".detail-field").css("display","none");
+//        $(".add-field").css("display","none");
+        window.location.href="http://localhost:8080/index";
 	})
 
 	$(".add-field-button").click(function(){
@@ -33,12 +34,20 @@ $(document).ready(function() {
         $(".add-field").show();
 	})
 
+//	$(".saveFieldButton").click(function(orgId){
+//        console.log($("#fieldName").val());
+//        console.log($("#fieldValue").val());
+//        $.get("http://localhost:8080/field/save/"+orgId+"/"+$("#fieldName").val()+"/"+$("#fieldValue").val(), function(result){});
+//	})
+function saveFieldButton(orgId) {
+    $.get("http://localhost:8080/field/save/"+orgId+"/"+$("#fieldName").val()+"/"+$("#fieldValue").val(), function(result){});
+}
 
-	
 });
 
 
-function edit(index) {
-    $(".view-list").css("display","none");
-    $(".detail-field").show();
+function saveFieldButton(orgId) {
+    $.get("http://localhost:8080/field/save/"+orgId+"/"+$("#fieldName").val()+"/"+$("#fieldValue").val(), function(result){
+         window.location.href="http://localhost:8080/field/"+orgId;
+    });
 }

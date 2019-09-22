@@ -76,7 +76,7 @@
                                     Custom Field Name
                                 </div>
                                 <div class="aui-list-item-input">
-                                    <input type="text" placeholder="Value">
+                                    <input id="fieldName" type="text" placeholder="Value">
                                 </div>
                             </div>
                         </li>
@@ -86,13 +86,12 @@
                                     Custom Field Value
                                 </div>
                                 <div class="aui-list-item-input">
-                                    <input type="text" placeholder="Value">
+                                    <input id="fieldValue" type="text" placeholder="Value">
                                 </div>
                             </div>
                         </li>
                     </ul>
-                    <div class="aui-btn aui-btn-success aui-btn-block save-field-button">Save</div>
-                    <div class="aui-btn aui-btn-primary aui-btn-block back-main">Add Custom Field</div>
+                    <div class="aui-btn aui-btn-success aui-btn-block" th:onclick="saveFieldButton([[${orgId}]]);">Save</div>
                 </div>
             </div>
         </div>

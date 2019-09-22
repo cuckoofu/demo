@@ -8,5 +8,5 @@ import java.util.List;
 public interface ColumnRepository extends JpaRepository<ExpandoColumn, Long> {
 
     public List<ExpandoColumn> findByTableid(long tableid);
-    
+
 }

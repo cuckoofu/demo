@@ -12,4 +12,6 @@ public interface OrganizationService {
     public List<ExpandoColumn> getCustomFieldByOrgId(long orgId);
 
     public void saveCustomField(String fieldName, String fieldValue);
+
+    public void saveOrUpdateFieldValue(String orgId, String fieldValue);
 }

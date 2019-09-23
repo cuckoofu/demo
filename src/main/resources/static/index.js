@@ -51,3 +51,28 @@ function saveFieldButton(orgId) {
          window.location.href="http://localhost:8080/field/"+orgId;
     });
 }
+
+function updateField(orgId) {
+    var fieldValue;
+    var arr = new Array();
+
+    $(".custom-field input[type='text']").each(function(){
+       arr.push($(this).attr('id') + "=" + $(this).val());
+    });
+
+    var fieldValue = arr.join(",");
+    console.log(fieldValue);
+
+    $.ajax({
+        url: "http://localhost:8080/field/update/"+orgId,
+        type: "get",
+        async: false,
+        data: {
+            fieldValue: fieldValue,
+        },
+        dataType: "json",
+        success: function(data) {
+
+        }
+    });
+}

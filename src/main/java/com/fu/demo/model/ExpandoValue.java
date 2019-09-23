@@ -11,15 +11,15 @@ public class ExpandoValue {
 
     @Id
     @Column
-    private long valueid;
+    private int valueid;
     @Column
     private long companyid;
     @Column
     private long tableid;
     @Column
     private long columnid;
-    @Column
-    private long rowid_;
+    @Column(name="rowid_")
+    private long rowid;
     @Column
     private long classnameid;
     @Column
@@ -31,7 +31,7 @@ public class ExpandoValue {
         return valueid;
     }
 
-    public void setValueid(long valueid) {
+    public void setValueid(int valueid) {
         this.valueid = valueid;
     }
 
@@ -59,12 +59,12 @@ public class ExpandoValue {
         this.columnid = columnid;
     }
 
-    public long getRowid_() {
-        return rowid_;
+    public long getRowid() {
+        return rowid;
     }
 
-    public void setRowid_(long rowid_) {
-        this.rowid_ = rowid_;
+    public void setRowid(long rowid) {
+        this.rowid = rowid;
     }
 
     public long getClassnameid() {

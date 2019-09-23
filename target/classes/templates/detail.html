@@ -49,20 +49,20 @@
                 <div class="aui-content aui-margin-b-15">
                     <ul class="aui-list aui-form-list">
                         <li class="aui-list-header">Edit custom field</li>
-                        <div th:each="columns:${columns}">
+                        <div th:each="columns:${columns}" class="custom-field">
                             <li class="aui-list-item">
                                 <div class="aui-list-item-inner">
                                     <div class="aui-list-item-label">
                                         <span th:text="${columns.name}"/>
                                     </div>
                                     <div class="aui-list-item-input">
-                                        <input type="text" placeholder="Value" th:value="${columns.defaultdata}">
+                                        <input type="text" placeholder="Value" th:value="${columns.defaultdata}" th:id="${columns.columnid}">
                                     </div>
                                 </div>
                             </li>
                         </div>
                     </ul>
-                    <div class="aui-btn aui-btn-success aui-btn-block save-org-button">Save</div>
+                    <div class="aui-btn aui-btn-success aui-btn-block save-org-button" th:onclick="updateField([[${orgId}]]);">Save</div>
                     <div class="aui-btn aui-btn-primary aui-btn-block add-field-button">Add Custom Field</div>
                 </div>
             </div>

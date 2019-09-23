@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -42,6 +43,12 @@ public class FieldController {
     @RequestMapping(value="/field/save/{orgId}/{fieldName}/{fieldValue}", method = RequestMethod.GET)
     public String getFieldByOrgId(Model model, @PathVariable String orgId, @PathVariable String fieldName, @PathVariable String fieldValue) {
         organizationService.saveCustomField(fieldName, fieldValue);
+        return "detail";
+    }
+
+    @RequestMapping(value="/field/update/{orgId}", method = RequestMethod.GET)
+    public String saveOrUpdateFieldValue(Model model, @PathVariable String orgId, @RequestParam String fieldValue) {
+        organizationService.saveOrUpdateFieldValue(orgId, fieldValue);
         return "detail";
     }
 }
